@@ -1,6 +1,7 @@
 package com.example.chatgbt.di
 
 import com.example.chatgbt.api.OpenAiApi
+import com.example.chatgbt.models.ApiKey
 import com.example.chatgbt.models.ChatRequest
 import com.example.chatgbt.models.Message
 import com.example.chatgbt.repository.OpenAiRepository
@@ -24,7 +25,7 @@ object AppModule {
         return OkHttpClient.Builder()
             .addInterceptor { chain ->
                 val request = chain.request().newBuilder()
-                    .addHeader("Authorization", "Bearer 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")
+                    .addHeader("Authorization", ApiKey.apiKey)
                     .build()
                 chain.proceed(request)
             }
