@@ -24,7 +24,7 @@ object AppModule {
         return OkHttpClient.Builder()
             .addInterceptor { chain ->
                 val request = chain.request().newBuilder()
-                    .addHeader("Authorization", "Bearer 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")
+                    .addHeader("Authorization", "Bearer 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")
                     .build()
                 chain.proceed(request)
             }
